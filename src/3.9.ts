@@ -1,7 +1,7 @@
 {
   // Abstraction-----
 
-  //----------Interface
+  //----------Interface-to abstraction-------
 
   interface Vehicle1 {
     //idea
@@ -31,7 +31,31 @@
   }
 
   const toyotaCar = new Car();
-  toyotaCar.startEngine();
+  //   toyotaCar.startEngine();
 
-  //----------abstraction
+  //----------abstraction----Abstraction
+
+  abstract class Vehicle2 {
+    abstract startEngine(): void;
+
+    abstract stopEngine(): void;
+
+    abstract move(): void;
+  }
+
+  class ToyotaCar extends Vehicle2 {
+    startEngine(): void {
+      console.log(`I am stating the car engine`);
+    }
+
+    stopEngine(): void {
+      console.log(`I am Stopping the car engine`);
+    }
+    move(): void {
+      console.log("I am moning Noe");
+    }
+  }
+
+  const hondaCar = new ToyotaCar();
+  hondaCar.startEngine();
 }
